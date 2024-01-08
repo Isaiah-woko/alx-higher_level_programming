@@ -1,5 +1,10 @@
 #include <python.h>
 
+/**
+ * print_python_list_info - prints python list
+ * @p: the py object
+ * Return: void
+*/
 void print_python_list_info(PyObject *p)
 {
 
