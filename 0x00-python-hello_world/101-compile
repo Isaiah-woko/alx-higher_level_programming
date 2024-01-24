@@ -1,0 +1,25 @@
+import compileall
+import os
+
+
+def compile_python_file(input_filename, output_filename):
+    try:
+        compileall.compile_file(input_filename, legacy=True)
+        print(f"Compilation successful. Output file: {output_filename}")
+    except Exception as e:
+        print(f"Error during compilation: {e}")
+
+
+if __name__ == "__main__":
+    # Get the input Python file name from the environment variable
+    pyfile_env_var = "PYFILE"
+    input_filename = os.environ.get(pyfile_env_var)
+
+    if input_filename:
+        # Set the output file name based on the input file name
+        output_filename = f"{os.path.splitext(input_filename)[0]}c"
+
+        # Compile the Python file
+        compile_python_file(input_filename, output_filename)
+    else:
+        print(f"Error: Environment variable {pyfile_env_var} not set.")
