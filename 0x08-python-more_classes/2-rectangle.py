@@ -5,8 +5,8 @@
 
 class Rectangle(object):
     """This class object respresnets the definition for the Rectangle class
-        It has several methods the a defined the Area and other properties of
-        the Rectangle class object.
+        It has several methods thats defines the Area and some other properties
+        of the Rectangle class object.
     """
     def __init__(self, width=0, height=0):
         self.__height = height
