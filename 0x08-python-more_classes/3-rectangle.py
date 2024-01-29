@@ -17,7 +17,7 @@ class Rectangle(object):
         if self.__width == 0 or self.__height == 0:
             return rectangle_string
 
-        for _ in range(self.__height):
+        for i in range(self.__height):
             rectangle_string += '#' * self.__width + '\n'
         return rectangle_string
 
