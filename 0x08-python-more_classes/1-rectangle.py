@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""This module contains a definition of a class"""
 
 
-class Rectangle:
-    """This is a defiinition of a rectangle class
-        Attribute: It would have a height an dwidth attributes
-        while would be private instances
+"""This module contains the definition of the class for a Rectangle"""
+
+
+class Rectangle(object):
+    """This class object respresnets the definition for the Rectangle class
+        It has several methods the a defined the Area and other properties of
+        the Rectangle class object.
     """
-
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
