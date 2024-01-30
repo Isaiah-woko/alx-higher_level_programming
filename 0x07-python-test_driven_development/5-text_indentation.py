@@ -23,3 +23,4 @@ def text_indentation(text):
             print("\n")
         else:
             print("{}".format(char), end='')
+

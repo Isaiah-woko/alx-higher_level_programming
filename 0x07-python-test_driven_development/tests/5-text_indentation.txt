@@ -1,0 +1,31 @@
+>>> indent = __import__("5-text_indentation").text_indentation
+>>> text = ("""Greetings! I'm an enthusiastic coder named Isaiah woko. \
+... My passion for programming knows no bounds. \
+... There are two things close to my heart: Programming and coding challenges.\
+... Would you mind sharing your name with me?""")
+>>> indent(text)
+Greetings! I'm an enthusiastic coder named Isaiah woko.
+
+ My passion for programming knows no bounds.
+
+ There are two things close to my heart:
+
+ Programming and coding challenges.
+
+Would you mind sharing your name with me?
+
+
+>>> indent("""Wow: Is this really working? or should i try another.""")
+Wow:
+
+ Is this really working?
+
+ or should i try another.
+
+>>> indent(23)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 16, in text_indentation
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+>>>
