@@ -39,5 +39,3 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_error_assertion(self):
         self.assertRaises(TypeError, max_integer(['i']))
-
-    
