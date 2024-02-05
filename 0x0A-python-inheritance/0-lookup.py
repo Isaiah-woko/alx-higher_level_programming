@@ -10,6 +10,4 @@ class list:
         """
 
     def lookup(obj):
-
-        """The function for returning the obj attributes"""
         return dir(obj)
