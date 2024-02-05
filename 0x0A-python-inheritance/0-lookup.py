@@ -3,11 +3,9 @@
 """This module is for the function that returns attributes"""
 
 
-class list:
+def lookup(obj):
 
-    """This class returns a list of all
-            the objects attributs and methods
-        """
-
-    def lookup(obj):
-        return dir(obj)
+    """This function returns a list of all
+       the objects attributs and methods
+    """
+    return dir(obj)
