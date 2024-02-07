@@ -1,55 +1,55 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> 
 >>> bg = BaseGeometry()
->>> 
->>> bg.integer_validator("my_int", 12)
->>> bg.integer_validator("width", 89)
->>> 
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[TypeError] name must be an integer
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[ValueError] age must be greater than 0
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
-[ValueError] distance must be greater than 0
->>> try:
-...     bg.integer_validator("nme")
-... except Exception as e:
-...     print(e)
-...
-BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> try:
-...     bg.integer_validator(34, 89)
-... except Exception as e:
-...     print(e)
-...
-34 must be a string
->>> try:
-...     bg.integer_validator("cool", 89)
-... except Exception as e:
-...     print(e)
-...
->>>
->>> try:
-...     bg.integer_validator("cool", True)
-... except Exception as e:
-...     print(e)
-...
->>> try:
-...     bg.integer_validator("cool", "kkuyy")
-... except Exception as e:
-...     print(e)
-...
-cool must be an integer
->>>
+>>> bg.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: age must be an integer
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: age must be an integer
+>>> bg.integer_validator("age", True)
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: age must be an integer
+>>> bg.integer_validator("age", (4,))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: age must be an integer
+>>> bg.integer_validator("age", "4")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 18, in integer_validator
+    raise TypeError(f"{name} must be an integer")
+TypeError: age must be an integer
+>>> bg.integer_validator("age", -4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 21, in integer_validator
+    raise ValueError(f"{name} must be greater than 0")
+ValueError: age must be greater than 0
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/isaiah/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 21, in integer_validator
+    raise ValueError(f"{name} must be greater than 0")
+ValueError: age must be greater than 0
+>>> bg.integer_validator("age", 1)
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
