@@ -1,6 +1,8 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> 
 >>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
 >>> bg.integer_validator("age", {3, 4})
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
