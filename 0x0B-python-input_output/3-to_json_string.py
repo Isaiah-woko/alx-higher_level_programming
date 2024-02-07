@@ -4,7 +4,8 @@ import json
 """This is a module for json representation"""
 
 
-def to_json_string(my_obj):
+def to_json_string(object):
+
     """This function returns the JSON
         representation of an object (string)
 
@@ -12,4 +13,4 @@ def to_json_string(my_obj):
         my_obj: The object to return JSON representation
     """
 
-    return json.dumps(my_obj)
+    return (json.dumps(object))
