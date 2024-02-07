@@ -10,7 +10,7 @@ def inherits_from(obj, a_class):
         specified class ; otherwise False.
     """
 
-    if issubclass(a_class, a_class.__bases__):
-        return True
-
-    return False
+    if type(obj) != a_class:
+        return issubclass(type(obj), a_class)
+    else:
+        return False
