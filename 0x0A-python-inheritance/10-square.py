@@ -30,8 +30,27 @@ class Rectangle(BaseGeometry):
     """
     def __init__(self, width, height):
 
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+
         self.__height = height
         self.__width = width
 
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+    def __str__(self):
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+
+    def area(self):
+        return self.__width * self.__height
+
+
+class Square(Rectangle):
+    """This class is a defintion of a rectangle class which inherits
+       methods of the Retangle class.
+    """
+
+    def __init__(self, size):
+        super().__init__(size, size)
+        self.integer_validator("size", size)
+
+    def area(self):
+        return super().area()
