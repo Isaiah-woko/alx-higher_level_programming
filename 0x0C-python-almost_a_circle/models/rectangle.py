@@ -135,3 +135,21 @@ class Rectangle(Base):
                   .format(self.id, cor_x, cor_y, rect_width, rect_height))
 
         return result
+
+    def update(self, *args, **kwargs):
+        """An Update method"""
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            setattr(self, attributes[i], arg)
+
+        if not args:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.__width = kwargs['width']
+            if 'height' in kwargs:
+                self.__height = kwargs['height']
+            if 'x' in kwargs:
+                self.__x = kwargs['x']
+            if 'y' in kwargs:
+                self.__y = kwargs['y']
