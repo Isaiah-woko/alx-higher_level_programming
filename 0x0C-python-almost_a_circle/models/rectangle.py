@@ -122,3 +122,16 @@ class Rectangle(Base):
 
         # Print the constructed rectangle
         print(rectangle, end='')
+
+    def __str__(self):
+        """Returns astring representation"""
+
+        cor_x = self.__x
+        cor_y = self.y
+        rect_height = self.__height
+        rect_width = self.__width
+
+        result = ("[Rectangle] ({}) {}/{} - {}/{}"
+                  .format(self.id, cor_x, cor_y, rect_width, rect_height))
+
+        return result
