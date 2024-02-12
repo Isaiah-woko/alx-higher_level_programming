@@ -113,7 +113,7 @@ class Rectangle(Base):
 
         # Add vertical space before the rectangle
         rectangle += '\n' * self.__y
-        
+
         for _ in range(self.__height):
             # Add horizontal space (indentation) before drawing the row
             rectangle += ' ' * self.__x
@@ -122,4 +122,3 @@ class Rectangle(Base):
 
         # Print the constructed rectangle
         print(rectangle, end='')
-
