@@ -106,3 +106,20 @@ class Rectangle(Base):
     def area(self):
         """Rectangle area method"""
         return (self.width * self.height)
+
+    def display(self):
+        """Prints a rectangle"""
+        rectangle = ""
+
+        # Add vertical space before the rectangle
+        rectangle += '\n' * self.__y
+        
+        for _ in range(self.__height):
+            # Add horizontal space (indentation) before drawing the row
+            rectangle += ' ' * self.__x
+            # Add the row of '#' characters representing the rectangle's width
+            rectangle += '#' * self.__width + '\n'
+
+        # Print the constructed rectangle
+        print(rectangle, end='')
+
