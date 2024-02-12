@@ -3,9 +3,6 @@
 """This module contains a class defintion of the Base models class"""
 
 
-import json
-
-
 class Base(object):
     """This is the class defition of the base model.
 

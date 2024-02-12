@@ -9,13 +9,13 @@ class Rectangle(Base):
     """This is the class defition of the rectangle model.
 
        Attributes:
-            width (int): this represents the width of the Rectangle
+            width: this represents the width of the Rectangle
                         object as a private instance attribute.
-            height (int): this represents the height of the Rectangle
+            height: this represents the height of the Rectangle
                         object as a private intance attibute.
-            x (int): this represent the x co-ordinate postion of the
+            x: this represent the x co-ordinate postion of the
                         Rectangle object as a private attribute.
-            y (int): this represent the y co-ordinate postion of the
+            y: this represent the y co-ordinate postion of the
                     Rectangle object as a private attribute.
     """
 
