@@ -63,7 +63,7 @@ class Square(Rectangle):
         """object dictionary"""
         dictionary = {
             'id': self.id,
-            'size': self.__size,
+            'size': self.size,
             'x': self.x,
             'y': self.y
         }
