@@ -58,9 +58,10 @@ class Base(object):
         if dictionary is None or dictionary == {}:
             return
         if cls.__name__ == "Rectangle":
-            instance = cls(1, 1)
-        else:
-            instance = cls(1)
+            instance = cls(2, 8)
+        elif cls.__name__ == "Square":
+            instance = cls(10)
+
         instance.update(**dictionary)
         return instance
 
