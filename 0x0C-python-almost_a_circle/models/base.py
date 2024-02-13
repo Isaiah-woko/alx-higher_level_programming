@@ -3,6 +3,9 @@
 """This module contains a class defintion of the Base models class"""
 
 
+import json
+
+
 class Base(object):
     """This is the class defition of the base model.
 
@@ -18,3 +21,12 @@ class Base(object):
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns the JSON string representation"""
+
+        if not list_dictionaries:
+            return []
+
+        return json.dumps(list_dictionaries)
