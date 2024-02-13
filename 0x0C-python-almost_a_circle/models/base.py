@@ -27,6 +27,6 @@ class Base(object):
         """returns the JSON string representation"""
 
         if list_dictionaries is None or list_dictionaries == []:
-            return []
+            return "[]"
 
         return json.dumps(list_dictionaries)
