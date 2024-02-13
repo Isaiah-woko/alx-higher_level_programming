@@ -33,3 +33,14 @@ class Square(Rectangle):
                   .format(self.id, cor_x, cor_y, self.__size))
 
         return result
+
+    @property
+    def size(self):
+        """size getter"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """size setter"""
+        self.width = value
+        self.height = value
