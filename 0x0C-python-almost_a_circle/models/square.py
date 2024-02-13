@@ -20,8 +20,7 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(width=size, height=size, x=x, y=y, id=id)
-        self.__size = size
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """Returns astring representation"""
@@ -30,7 +29,7 @@ class Square(Rectangle):
         cor_y = self.y
 
         result = ("[Square] ({}) {}/{} - {}"
-                  .format(self.id, cor_x, cor_y, self.__size))
+                  .format(self.id, cor_x, cor_y, self.size))
 
         return result
 
