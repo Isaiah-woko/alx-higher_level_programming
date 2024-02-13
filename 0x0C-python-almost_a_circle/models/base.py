@@ -33,33 +33,48 @@ class Base(object):
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """this method saves to file"""
-        cls.json_obj_list = []
-        cls.filename = "{}.json".format(cls.__name__)
-
-        for cls_obj in list_objs:
-            cls.json_obj_list.append(cls_obj.to_dictionary())
-
-        with open(cls.filename, "w") as file:
-            file.write(cls.to_json_string(cls.json_obj_list))
+        """JSON string representation of list_objs to a file"""
+        
+        file = cls.__name__ + ".json"
+        with open(file, 'w') as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                # get the dictorny of each on the list_objs
+                save = [x.to_dictionary() for x in list_objs]
+                save = Base.to_json_string(save)
+                f.write(save)
 
     @staticmethod
     def from_json_string(json_string):
-        """converts from json"""
-        if json_string is None:
+        """args : (str) my_str"""
+        if json_string is None or json_string == []:
             return []
-        else:
-            return json_string
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
-        """creates a new instance"""
+        """returns an instance with all attributes already set"""
+        if dictionary is None or dictionary == {}:
+            return
         if cls.__name__ == "Rectangle":
-            instance = cls(5, 10)
-        elif cls.__name__ == "Square":
-            instance = cls(7)
+            instance = cls(1, 1)
         else:
-            raise TypeError("unknow")
+            instance = cls(1)
         instance.update(**dictionary)
-
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """"returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        result = []
+        try:
+            with open(filename, "r") as file:
+                # load
+                load = Base.from_json_string(file.read())
+                for lo in load:
+                    result.append(cls.create(**lo))
+        except IOError:
+            result = []
+        return result
