@@ -1,14 +1,14 @@
 #!/usr/bin/node
-function compute_factorial (num) {
+function ComputeFactorial (num) {
   if (isNaN(num) || num < 0) {
     return 1;
   } else if (num === 0) {
     return 1;
   } else {
-    return num * compute_factorial(num - 1);
+    return num * ComputeFactorial(num - 1);
   }
 }
 
 const num = parseInt(process.argv[2]);
-const result = compute_factorial(num);
+const result = ComputeFactorial(num);
 console.log(result);
