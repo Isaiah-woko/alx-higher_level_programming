@@ -1,0 +1,4 @@
+#!/bin/bash
+
+semistandard --fix
+
