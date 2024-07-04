@@ -1,3 +1,3 @@
 #!/bin/bash
-# a Bash script that sends a DELETE request to the URL
-curl -s -X DELETE "$1"
+#  takes in a URL and displays all HTTP methods the server will accept.
+curl -sI "$!" | grep "Allow" | cut -d " " -f 2
