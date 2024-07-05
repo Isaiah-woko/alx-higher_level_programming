@@ -10,10 +10,10 @@ if __name__ == "__main__":
     username = sys.argv[1]
     token = sys.argv[2]
     url = "https://api.github.com/user"
-    repo = requests.get(url, auth=(username, token))
+    repos = requests.get(url, auth=(username, token))
     try:
-        repo.raise_for_status()
-        json_ = repo.json()
+        repos.raise_for_status()
+        json_ = repos.json()
         print(json_.get("id"))
     except requests.exceptions.RequestException:
         print("None")
