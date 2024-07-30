@@ -8,6 +8,5 @@ const fs = require('fs');
 fs.writeFile(fileName, content, 'utf8', err => {
   if (err) {
     console.error(err);
-    return;
   }
 });
