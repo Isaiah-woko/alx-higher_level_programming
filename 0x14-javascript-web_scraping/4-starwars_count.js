@@ -3,7 +3,7 @@
 const request = require('request');
 
 const characterId = 18;
-const filmUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const filmUrl = process.argv[2];
 const characterUrl = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
 
 request.get(filmUrl, { json: true }, (error, response, body) => {
