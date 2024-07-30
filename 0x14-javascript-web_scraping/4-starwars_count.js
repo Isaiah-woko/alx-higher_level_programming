@@ -6,7 +6,7 @@ const characterId = 18;
 const filmUrl = process.argv[2];
 const characterUrl = `https://swapi-api.alx-tools.com/api/people/${characterId}/`;
 
-request.get(filmUrl, { json: true }, (error, response, body) => {
+request(filmUrl, { json: true }, (error, response, body) => {
   if (error) {
     console.error(error);
   } else if (response.statusCode === 200) {
