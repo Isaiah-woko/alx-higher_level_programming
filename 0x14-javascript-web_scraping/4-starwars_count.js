@@ -11,13 +11,7 @@ request(filmUrl, { json: true }, (error, response, body) => {
     console.error(error);
   } else if (response.statusCode === 200) {
     const films = body.results;
-    let counter = 0;
-
-    films.forEach(film => {
-      if (film.characters.includes(characterUrl)) {
-        counter++;
-      }
-    });
+    const counter = films.filter(film => film.characters.includes(characterUrl)).length;
 
     console.log(counter);
   }
