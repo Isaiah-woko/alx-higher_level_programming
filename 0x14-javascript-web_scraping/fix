@@ -1,3 +1,2 @@
-chmod +x *.js
 semistandard --fix *.js
 semistandard
