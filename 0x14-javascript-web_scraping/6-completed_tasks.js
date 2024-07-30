@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// print users with completed tasks
+
 const request = require('request');
 const url = process.argv[2];
 
